@@ -1,0 +1,184 @@
+{
+    "artist": [
+        {
+            "Aid": 1,
+            "Aname": "Akshay Bansode",
+            "Aemail": "akshay@gmail.com",
+            "Owhatsappno": "9876543456",
+            "Aaddress": "Uruli Kanchan",
+            "Acity": "Pune",
+            "Aworkexperience": "5+ years",
+            "Alikes": 5,
+            "Awishlist": 5,
+            "Acategory": "Guitarist",
+            "Asubcategory": "Guitarist",
+            "Aspeciality": [
+                "Guitarist",
+                "Singer"
+            ],
+            "Aprofilephotos": "image1.jpg",
+            "Aphotos": [
+                "img1.jpg",
+                "img2.jpg"
+            ],
+            "Afblink": "https://www.facebook.com/",
+            "Ainstalink": "https://www.instagram.com/",
+            "Awebsite": "https://www.website.com/",
+            "Aliink1": "videolink1",
+            "Alink2": "videolink2",
+            "Alink3": "videolink3",
+            "Arequirements": [
+                "Dinner",
+                "Music System"
+            ],
+            "Adescription": "This is the description",
+            "Aregistrationdate": "12/01/2024",
+            "Asubscriptiondate": "20/01/2024",
+            "Astatus": "Active"
+        },
+        {
+            "Aid": 2,
+            "Aname": "John Smith",
+            "Aemail": "john@gmail.com",
+            "Owhatsappno": "8956378593",
+            "Aaddress": "FC Road",
+            "Acity": "Pune",
+            "Aworkexperience": "2 years",
+            "Alikes": 4,
+            "Awishlist": 4,
+            "Acategory": "Singer",
+            "Asubcategory": "Western",
+            "Aspeciality": [
+                "Guitarist",
+                "Singer",
+                "Anchoring"
+            ],
+            "Aprofilephotos": "image2.jpg",
+            "Aphotos": [
+                "img1.jpg",
+                "img2.jpg"
+            ],
+            "Afblink": "https://www.facebook.com/",
+            "Ainstalink": "https://www.instagram.com/",
+            "Awebsite": "https://www.website.com/",
+            "Aliink1": "videolink1",
+            "Alink2": "videolink2",
+            "Alink3": "videolink3",
+            "Arequirements": [
+                "Dinner",
+                "Music System",
+                "Stay"
+            ],
+            "Adescription": "This is the description",
+            "Aregistrationdate": "20/01/2024",
+            "Asubscriptiondate": "05/02/2024",
+            "Astatus": "Active"
+        }
+    ],
+    "organizer": [
+        {
+            "Oid": 1,
+            "Oname": "Sonai Hotel",
+            "Obusinessname": "Sonai Hotel",
+            "Oemail": "sonaihotel@gmail.com",
+            "Owhatsappno": "9856743266",
+            "Oaddress": "Uruli Kanchan",
+            "Obusinesscategory": "Hotel",
+            "Ofacilities": [
+                "AC Hall",
+                "Lawn",
+                "Quality Food"
+            ],
+            "Owishlist": 5,
+            "Olikes": 5,
+            "Oprofilephoto": "image1.jpg",
+            "Ophotos": [
+                "img1.jpg",
+                "img2.jpg"
+            ],
+            "Ofblink": "https://www.facebook.com/",
+            "Oinstalink": "https://www.instagram.com/",
+            "Owebsite": "https://www.website.com/",
+            "Ofacilityforartist": [
+                "Dinner",
+                "Music System",
+                "Stay"
+            ],
+            "Odescription": "This is the description",
+            "Oregistrationdate": "05/01/2024",
+            "Osubscriptiondate": "10/01/2024",
+            "Ostatus": "Active"
+        },
+        {
+            "Oid": 2,
+            "Oname": "ABC Organizer",
+            "Obusinessname": "ABC Organizer",
+            "Oemail": "organizer@gmail.com",
+            "Owhatsappno": "8877964432",
+            "Oaddress": "Pune",
+            "Obusinesscategory": "company",
+            "Ofacilities": [
+                "AC Hall",
+                "Lawn"
+            ],
+            "Owishlist": 4,
+            "Olikes": 4,
+            "Oprofilephoto": "image2.jpg",
+            "Ophotos": [
+                "img1.jpg",
+                "img2.jpg"
+            ],
+            "Ofblink": "https://www.facebook.com/",
+            "Oinstalink": "https://www.instagram.com/",
+            "Owebsite": "https://www.website.com/",
+            "Ofacilityforartist": [
+                "Dinner",
+                "Music System"
+            ],
+            "Odescription": "This is the description",
+            "Oregistrationdate": "23/02/2024",
+            "Osubscriptiondate": "27/02/2024",
+            "Ostatus": "Active"
+        }
+    ],
+    "events": [
+        {
+            "Eid": 1,
+            "Ename": "Musical Night",
+            "Elocation": "Pune",
+            "Edate": "22/01/2024",
+            "Etime": "7PM",
+            "Artistequipwith": [
+                "Music System",
+                "Guitar"
+            ],
+            "Facilitiesforartist": [
+                "Dinner",
+                "Travel Allowance"
+            ],
+            "Orequirement": [
+                "Guitarist",
+                "Singer"
+            ]
+        },
+        {
+            "Eid": 2,
+            "Ename": "Lohri Fest",
+            "Elocation": "Pune",
+            "Edate": "07/02/2024",
+            "Etime": "5PM-8PM",
+            "Artistequipwith": [
+                "Music System",
+                "Guitar"
+            ],
+            "Facilitiesforartist": [
+                "Dinner",
+                "Travel Allowance"
+            ],
+            "Orequirement": [
+                "Guitarist",
+                "Anchor"
+            ]
+        }
+    ]
+}

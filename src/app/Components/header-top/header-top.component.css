@@ -1,0 +1,54 @@
+mat-toolbar {
+    color: white;
+    height: 80px;
+}
+
+.logo {
+    width: 200px;
+    height: 70px;
+}
+
+.center-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    color: #40ADEA;
+}
+
+.icons button:hover {
+    color: #F0E945;
+}
+
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 40%;
+}
+
+.search-input {
+    width: 100%;
+    border-radius: 20px;
+    border: 1px solid black;
+    padding: 5px;
+    padding-left: 15px;
+    background: rgb(211, 211, 211);
+}
+
+.search-icon {
+    position: absolute;
+    right: 8px;
+    color: #40ADEA;
+}
+
+@media screen and (max-width: 600px) {
+    .search-container {
+        display: none;
+    }
+}
