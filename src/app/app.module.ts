@@ -16,6 +16,10 @@ import { HomeComponent } from './Components/home/home.component';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
+import { ArtistPageComponent } from './Components/artist-page/artist-page.component';
+import {MatTreeModule} from '@angular/material/tree';
+import {MatPaginatorModule} from '@angular/material/paginator';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +27,8 @@ import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
     HeaderTopComponent,
     HeaderBottomComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    ArtistPageComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +42,10 @@ import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
     MatMenuModule,
     NgbCarouselModule,
     NgbDropdownModule,
-    NgbCollapseModule
+    NgbCollapseModule,
+    MatTreeModule,
+    MatPaginatorModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
