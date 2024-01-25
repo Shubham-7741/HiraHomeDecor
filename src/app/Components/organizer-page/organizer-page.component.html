@@ -1,0 +1,144 @@
+<div class="header">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2">
+        <div class="bg-light text-center">
+          <h2>Filters</h2>
+          <hr />
+          <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+            <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+              <button mat-icon-button disabled></button>
+              {{ node.name }}
+            </mat-tree-node>
+
+            <mat-tree-node
+              *matTreeNodeDef="let node; when: hasChild"
+              matTreeNodePadding
+            >
+              <button
+                mat-icon-button
+                matTreeNodeToggle
+                [attr.aria-label]="'Toggle ' + node.name"
+              >
+                <mat-icon class="mat-icon-rtl-mirror">
+                  {{
+                    treeControl.isExpanded(node)
+                      ? "expand_more"
+                      : "chevron_right"
+                  }}
+                </mat-icon>
+              </button>
+              {{ node.name }}
+            </mat-tree-node>
+          </mat-tree>
+        </div>
+      </div>
+      <div class="col-md-10">
+        <div class="container">
+          <section class="vh-50 mt-3">
+            <div class="row justify-content-center align-items-center h-50">
+              <div class="col-12 col-md-12 col-xl-11">
+                <div *ngFor="let organizer of organizers" class="mb-3">
+                  <div
+                    class="card shadow mb-2 bg-white"
+                    style="border-radius: 15px"
+                    (click)="navigateToProfile(organizer)"
+                  >
+                    <div
+                      class="card-body p-1 d-md-flex text-center text-md-left"
+                    >
+                      <div
+                        class="ms-md-5 my-2 d-flex flex-column text-center pe-5 px-5"
+                      >
+                        <img
+                          src="{{ organizer.Oprofilephoto }}"
+                          alt="Generic placeholder image"
+                          class="img-fluid my-4 mb-1 rounded-circle mx-auto"
+                          style="width: 150px; z-index: 1"
+                        />
+                        <button mat-button class="text-center">
+                          <span>{{ organizer.Olikes }} </span>
+                          <i class="fa-regular fa-thumbs-up"></i>
+                        </button>
+                      </div>
+                      <div
+                        class="mx-md-5 mt-4 text-start px-5 text-center text-md-start"
+                      >
+                        <h2 class="mb-3">{{ organizer.Oname }}</h2>
+                        <p>{{ organizer.Obusinesscategory }}</p>
+                        <p>{{ organizer.Oaddress }}</p>
+                        <!-- <p>Experience: {{ organizer.Aworkexperience }}</p> -->
+                      </div>
+                      <div class="ms-auto ms-md-5 mt-4">
+                        <button mat-button class="">
+                          <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <div>
+                          <a
+                            class="btn btn-sm rounded-circle bg-primary text-white me-1"
+                            href="{{ organizer.Ofblink }}"
+                            target="_blank"
+                            ><i class="fab fa-facebook-f"></i
+                          ></a>
+                          <a
+                            class="btn btn-sm rounded-circle text-white me-1"
+                            style="
+                              background: linear-gradient(
+                                45deg,
+                                #405de6,
+                                #5851db,
+                                #833ab4,
+                                #c13584,
+                                #e1306c,
+                                #fd1d1d
+                              );
+                            "
+                            href="{{ organizer.Oinstalink }}"
+                            target="_blank"
+                            ><i class="fab fa-instagram"></i
+                          ></a>
+                          <a
+                            class="btn btn-sm rounded-circle text-white bg-primary me-1"
+                            href="{{ organizer.Oinstalink }}"
+                            ><i class="fab fa-linkedin-in"></i
+                          ></a>
+                        </div>
+                        <p>
+                          <a
+                            href="https://wa.me/{{ organizer.Owhatsappno }}"
+                            target="_blank"
+                            class="btn border border-secondary py-2 px-5 mt-2"
+                            style="border-radius: 1rem"
+                            ><img
+                              src="../../../assets/icons/whatsapp.png"
+                              alt=""
+                              style="height: 30px"
+                            />
+                            Book now</a
+                          >
+                        </p>
+                        <p>
+                          <i class="fa-solid fa-globe"></i
+                          ><a
+                            href="{{ organizer.Owebsite }}"
+                            target="_blank"
+                            class="text-decoration-none py-3 px-2 mt-3"
+                            >{{ organizer.Owebsite }}</a
+                          >
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <mat-paginator
+                  [pageSizeOptions]="[5, 10, 20]"
+                  showFirstLastButtons
+                ></mat-paginator>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -22,6 +22,8 @@
   import { HttpClientModule } from '@angular/common/http';
   import { ProductsComponent } from './Components/products/products.component';
   import { ArtistProfileComponent } from './Components/artist-profile/artist-profile.component';
+import { OrganizerPageComponent } from './Components/organizer-page/organizer-page.component';
+import { OrganizerProfileComponent } from './Components/organizer-profile/organizer-profile.component';
 
 
   @NgModule({
@@ -33,7 +35,9 @@
       HomeComponent,
       ArtistPageComponent,
       ProductsComponent,
-      ArtistProfileComponent
+      ArtistProfileComponent,
+      OrganizerPageComponent,
+      OrganizerProfileComponent
     ],
     imports: [
       BrowserModule,

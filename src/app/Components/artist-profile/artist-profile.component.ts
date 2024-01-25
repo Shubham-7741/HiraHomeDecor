@@ -10,7 +10,7 @@ import { ServiceService } from 'src/app/Service/service.service';
 })
 export class ArtistProfileComponent implements OnInit {
   // route: any;
-  artistService: any;
+  // artistService: any;
   artists: any[] = [];
 
   constructor(private route: ActivatedRoute, private service: ServiceService) {}
@@ -24,3 +24,4 @@ export class ArtistProfileComponent implements OnInit {
     // this.service.getArtistById(Aid: any)
   }
 }
+ 
