@@ -1,0 +1,147 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <div class="filter-tree-container">
+        <div class="pt-4 text-center">
+          <h2>Filters</h2>
+          <hr />
+          <!-- category-tree.component.html -->
+          <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+            <!-- Category nodes -->
+            <mat-tree-node
+              *matTreeNodeDef="let node"
+              matTreeNodeToggle
+              (click)="nodeClicked(node)"
+            >
+              <button mat-icon-button disabled></button>
+              {{ node.name }}
+            </mat-tree-node>
+
+            <!-- Subcategory nodes -->
+            <mat-tree-node *matTreeNodeDef="let node; when: hasChild">
+              <button
+                mat-icon-button
+                matTreeNodeToggle
+                (click)="nodeClicked(node)"
+              >
+                <mat-icon class="mat-icon-rtl-mirror">
+                  {{
+                    treeControl.isExpanded(node)
+                      ? "expand_more"
+                      : "chevron_right"
+                  }}
+                </mat-icon>
+              </button>
+              {{ node.name }}
+            </mat-tree-node>
+          </mat-tree>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-10" id="productsSection">
+      <section style="background-color: #b4b3b3">
+        <div class="container py-5">
+          <div class="row justify-content-center mb-3">
+            <div
+              class="col-md-12 col-xl-10"
+              *ngFor="let product of filteredProducts"
+            >
+              <div class="card shadow-0 border rounded-3 mb-3 py-3">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
+                      <div
+                        class="bg-image hover-zoom ripple rounded ripple-surface"
+                      >
+                        <img
+                          [src]="url + 'getProductPhoto/' + product.pid"
+                          class="w-100"
+                          alt="Product Image"
+                        />
+                        <a href="#!">
+                          <div class="hover-overlay">
+                            <div
+                              class="mask"
+                              style="
+                                background-color: rgba(253, 253, 253, 0.15);
+                              "
+                            ></div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-6">
+                      <h3 class="fw-bold">{{ product.pname }}</h3>
+                      <div class="d-flex flex-row">
+                        <div class="text-danger mb-1 me-2">
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                        </div>
+                      </div>
+                      <div class="mt-1 mb-0 text-muted small">
+                        <span>{{ product.pcategory }}</span> <br />
+                        <span>{{ product.psubcategory }}</span>
+                        <!-- Add other product details as necessary -->
+                      </div>
+                      <p class="text-truncate mb-4 mb-md-0">
+                        {{ product.pdescription }}
+                      </p>
+                    </div>
+                    <div
+                      class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start"
+                    >
+                      <p class="ms-2">
+                        <a
+                          href="https://wa.me/9021601395"
+                          target="_blank"
+                          class="btn btn-light btn-md border border-secondary bg-white px-5 py-2 mt-3 text-center"
+                        >
+                          <i
+                            class="fab fa-whatsapp"
+                            style="
+                              background: rgb(6, 199, 6);
+                              padding: 5px;
+                              border-radius: 50%;
+                              color: white;
+                            "
+                          ></i>
+                          Chat Now</a
+                        >
+                      </p>
+                      <!-- <h6 class="text-success">Free shipping</h6> -->
+                      <div class="d-flex flex-column mt-4">
+                        <button
+                          class="btn btn-dark btn-md"
+                          style="background-color: #b51069"
+                          type="button"
+                          (click)="navigateToProfile(product.pid)"
+                        >
+                          Details
+                        </button>
+                        <!-- Add logic for wishlist if needed -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="row justify-content-center mt-3">
+        <div class="col-12 col-md-10 col-xl-10 text-center">
+          <mat-paginator
+            [length]="products.length"
+            [pageSize]="pageSize"
+            (page)="onPageChange($event)"
+            showFirstLastButtons
+          >
+          </mat-paginator>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

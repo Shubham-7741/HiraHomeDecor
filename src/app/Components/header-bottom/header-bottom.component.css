@@ -1,65 +1,10 @@
-.navbar {
-    background-color: #40ADEA;
-}
+@media screen and (min-width:777px) {
+	.nav-link {
+		padding: 18px 0;
+		min-width: 120px;
+	}
 
-.navbar-nav .nav-item .nav-link{
-    padding: 0 50px 0 50px;
-    color: white;
-    text-align: center;
-    font-family: Roboto;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-}
-
-.navbar-nav .nav-item:hover {
-    color: #F0E945;
-}
-
-.btn {
-    padding: 10px 40px 10px 40px;
-}
-
-.mat-toolbar {
-    background-color: #40ADEA;
-    color: white;
-}
-
-.mat-button {
-    color: white;
-}
-
-button {
-    border-radius: 10px;
-    background: #F0E945;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    color: #1E1E1E;
-    text-align: center;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-family: Roboto;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-}
-
-.menu {
-    background: transparent;
-    border: none;
-    padding: 5px 20px 5px 20px;
-}
-
-.menu button {
-    background: rgb(226, 227, 227);
-    margin-bottom: 3px;
-    padding: 10px 30px 10px 30px;
-}
-
-.menu button:hover {
-    background: #F0E945;
-}
-
-.menu button:active {
-    color: black;
+	.navbar {
+		padding: 0
+	}
 }

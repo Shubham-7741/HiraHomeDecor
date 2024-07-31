@@ -1,0 +1,168 @@
+<!-- about banner -->
+<section class="w3l-about-breadcrumb text-center">
+  <div class="breadcrumb-bg breadcrumb-bg-about py-5">
+    <div class="container py-lg-5 py-md-4">
+      <div class="banner-info-grid px-md-5">
+        <h2 class="w3l-title-breadcrumb mb-3">About Us</h2>
+        <p class="inner-page-para px-lg-5">
+          Home decor shops often cater to various styles and preferences,
+          ranging from contemporary and modern designs to traditional and
+          vintage aesthetics.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- //about banner -->
+
+<!-- About Section -->
+<section class="w3l-content-6" id="skills">
+  <div class="content-6-mian py-5">
+    <div class="container py-lg-5 py-md-4 py-2">
+      <div class="content-info-in row">
+        <div class="content-gd col-lg-6 pe-lg-5 category-img">
+          <img
+            src="../../../assets/images/about1.webp"
+            alt="pot1"
+            class="img-fluid"
+          />
+        </div>
+        <div class="content-gd col-lg-6 mt-lg-0 mt-5 align-self ps-lg-5">
+          <h2 class="w3l-title-small mb-1">About Us</h2>
+          <h3 class="w3l-title-main mb-lg-4 mb-3">A Few words about us</h3>
+          <p class="my-4 pe-lg-5">
+            These shops offer a wide range of products such as furniture,
+            lighting fixtures, rugs, curtains, wall art, decorative accents, and
+            other household items aimed at enhancing the aesthetic appeal and
+            functionality of living spaces.
+          </p>
+          <h2 class="w3l-subtitle mb-md-5 mb-4">
+            We have 15+ years of experience. We have the best household items
+            for your home
+          </h2>
+          <div class="progress-info info1">
+            <h6 class="progress-tittle">Best Service</h6>
+          </div>
+          <div class="progress-info info3">
+            <h6 class="progress-tittle">Quality Products</h6>
+          </div>
+          <div class="progress-info info4 mb-0">
+            <h6 class="progress-tittle">Afordable Price</h6>
+          </div>
+          <div class="cwp23-text-cols mt-lg-5 mt-4 d-flex">
+            <div class="column">
+              <span><span class="counter mb-0">1400</span>+</span>
+              <h4>Customer Experience</h4>
+              <p class="border-end">
+                Focusing on providing exceptional customer service, including
+                knowledgeable staff, easy shopping experiences, and responsive
+                support for inquiries and issues.
+              </p>
+            </div>
+
+            <div class="column">
+              <span><span class="counter mb-0">43</span>+</span>
+              <h4>Collaborations and Partnerships</h4>
+              <p>
+                Collaborating with interior designers, home builders, and other
+                industry professionals to offer comprehensive solutions and
+                expand the brand's reach.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- About Section -->
+
+<section class="w3l-cwp py-5">
+  <div class="container py-lg-5 py-md-4 py-2">
+    <div class="row cwp23-content align-items-center">
+      <div class="col-lg-6">
+        <h5 class="w3l-title-small mb-3">
+          some main points to consider when it comes to home decor:
+        </h5>
+        <h3 class="w3l-title-main">
+          Our home decor shops provide personalized assistance and design
+          consultations to help customers create cohesive and stylish interiors
+        </h3>
+
+        <div class="cwp23-text-cols mt-lg-5 mt-4">
+          <div class="column">
+            <span><span class="counter mb-0">1200</span>+</span>
+            <h4>Quality Products</h4>
+            <p>
+              Providing high-quality furniture, accessories, and decor items
+              that are durable and long-lasting, ensuring customer satisfaction
+              and value for money.
+            </p>
+          </div>
+
+          <div class="column">
+            <span><span class="counter mb-0">13</span>k+</span>
+            <h4>Trend Awareness</h4>
+            <p>
+              Staying up-to-date with the latest trends in home decor, offering
+              fresh and innovative products to meet evolving consumer demands
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="col-lg-6 cwp23-text align-self mt-lg-0 mt-md-5 mt-4 pr-md-3 pr-2"
+      >
+        <img
+          src="../../../assets/images/about2.webp"
+          alt=""
+          class="img-fluid"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Product Start -->
+<div class="featured-product py-5" style="background-color: #b4b3b3">
+  <div class="container my-5 align-items-center text-center">
+    <div class="section-header">
+      <h1 class="fs-2 fw-bold" style="color: #b51069">Featured Product</h1>
+      <p class="py-3 fw-bold">
+        Introducing our featured product: lifelike artificial plants and grass,
+        perfect for adding a touch of greenery to any space, indoors or
+        outdoors.
+      </p>
+    </div>
+    <div class="row">
+      <div
+        class="col-md-3 col-sm-6"
+        *ngFor="let product of products.slice(0, 4)"
+      >
+        <div class="product-grid">
+          <div class="product-image">
+            <a class="image">
+              <img
+                [src]="url + 'getProductPhoto/' + product.pid"
+                alt="Product Image"
+              />
+              <!-- Bind product image source -->
+            </a>
+          </div>
+          <div class="product-content">
+            <h3 class="title">
+              <a (click)="navigateToProfile(product.pid)">{{
+                product.pname.length > 20
+                  ? product.pname.substring(0, 20) + "..."
+                  : product.pname
+              }}</a>
+            </h3>
+            <!-- Bind product model -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Featured Product End -->

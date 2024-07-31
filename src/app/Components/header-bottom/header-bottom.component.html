@@ -1,38 +1,139 @@
-<nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container">
-        <button class="navbar-toggler" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed"
-            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+<!-- header section strats -->
+<!-- <header class="header_section">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand ps-3" href="#"
+        ><img
+          src="../../../assets/HiraLogo.png"
+          class="rounded-circle"
+          alt=""
+          height="72"
+      /></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        (click)="isNavbarCollapsed = !isNavbarCollapsed"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        <div [ngbCollapse]="isNavbarCollapsed" class="navbar-collapse">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/artist">Artists</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Events</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/products">Products</a>
-                </li>
+      <div
+        [ngbCollapse]="isNavbarCollapsed"
+        class="collapse navbar-collapse"
+        id="navbarSupportedContent"
+      >
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Dropdown
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
-        </div>
-
-        <div class="navbar-nav ml-auto">
-            <div ngbDropdown>
-                <button class="btn btn-outline-light" id="dropdownBasic1" ngbDropdownToggle>
-                    Register Here
-                </button>
-                <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="menu">
-                    <button ngbDropdownItem>As Organizer</button>
-                    <button ngbDropdownItem>As Artist</button>
-                    <button ngbDropdownItem>As User</button>
-                </div>
-            </div>
-        </div>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link disabled"
+              href="#"
+              tabindex="-1"
+              aria-disabled="false"
+              >Disabled</a
+            >
+          </li>
+        </ul>
+        <button class="btn btn-light me-5" routerLink="/adminLogin">
+          Admin Login
+        </button>
+      </div>
     </div>
+  </nav>
+</header> -->
+<!-- end header section -->
+<div class="text-center d-none d-md-block">
+  <img
+    src="../../../assets/HiraLogo.png"
+    class="rounded-circle"
+    height="100"
+    alt="Company Logo"
+  />
+</div>
+<nav class="navbar navbar-expand-md navbar-dark sticky-top fixed-top bg-dark">
+  <div class="container">
+    <a class="navbar-brand d-md-none d-xs-block py-3" href="#">
+      <img
+        src="../../../assets/HiraLogo.png"
+        class="rounded-circle"
+        height="40"
+        alt="Company Logo"
+      />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      (click)="isNavbarCollapsed = !isNavbarCollapsed"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div
+      class="collapse navbar-collapse"
+      [ngbCollapse]="isNavbarCollapsed"
+      id="navbarNavDropdown"
+    >
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <a class="nav-link mx-2 active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2" routerLink="/all_products">All Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2" routerLink="/about_page">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2" routerLink="/contact_page">Contact Us</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link mx-2" href="#">Reserve</a>
+        </li> -->
+        <li class="nav-item">
+          <a
+            class="nav-link mx-2 btn rounded-0 btn-danger"
+            routerLink="/adminLogin"
+          >
+            Only Admin Login</a
+          >
+        </li>
+      </ul>
+      <!-- <button class="btn btn-light" routerLink="/adminLogin">
+        Only Admin Login
+      </button> -->
+    </div>
+  </div>
 </nav>

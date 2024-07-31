@@ -1,17 +1,294 @@
-<ngb-carousel [showNavigationIndicators]="false" [pauseOnHover]="false" [pauseOnFocus]="false">
-    <ng-template ngbSlide>
-        <div class="picsum-img-wrapper">
-            <img src="./assets/carousal/event1.jpg" alt="Random first slide" />
-        </div>
-    </ng-template>
-    <ng-template ngbSlide>
-        <div class="picsum-img-wrapper">
-            <img src="./assets/carousal/event2.jpg" alt="Random second slide" />
-        </div>
-    </ng-template>
-    <ng-template ngbSlide>
-        <div class="picsum-img-wrapper">
-            <img src="./assets/carousal/event3.jpg" alt="Random third slide" />
-        </div>
-    </ng-template>
+<ngb-carousel
+  [showNavigationIndicators]="false"
+  [pauseOnHover]="false"
+  [pauseOnFocus]="false"
+>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img
+        src="../../../assets/carousal/brushfire-pano-over-sofa.webp"
+        alt="Random first slide"
+      />
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img
+        src="../../../assets/carousal/how-to-choose-curtains-for-livin.webp"
+        alt="Random second slide"
+      />
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img
+        src="../../../assets/carousal/interior-wall-design.webp"
+        alt="Random third slide"
+      />
+    </div>
+  </ng-template>
 </ngb-carousel>
+
+<!-- Category Start-->
+<div class="category">
+  <div class="container-fluid my-5">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="category-img">
+          <img src="../../../assets/images/pot1.jpg" alt="pot1" />
+          <a class="category-name">
+            <h2>Hira Home Decor</h2>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="category-img">
+          <img
+            src="../../../assets/images/wallpaper.jpg"
+            alt="Wall Paper"
+            style="height: 300px"
+          />
+          <a class="category-name">
+            <h2>Hira Home Decor</h2>
+          </a>
+        </div>
+        <div class="category-img">
+          <img
+            src="../../../assets/images/lamp.jpg"
+            alt="lamp"
+            style="height: 300px"
+          />
+          <a class="category-name">
+            <h2>Hira Home Decor</h2>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="category-img">
+          <img src="../../../assets/images/pot2.jpg" alt="Pot 2" />
+          <a class="category-name">
+            <h2>Hira Home Decor</h2>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Category End-->
+
+<!-- Featured Product Start -->
+<div class="featured-product py-5" style="background-color: #b4b3b3">
+  <div class="container my-5 align-items-center text-center">
+    <div class="section-header">
+      <h1 class="fs-2 fw-bold" style="color: #b51069">Featured Product</h1>
+      <p class="py-3 fw-bold">
+        Introducing our featured product: lifelike artificial plants and grass,
+        perfect for adding a touch of greenery to any space, indoors or
+        outdoors.
+      </p>
+    </div>
+    <div class="row">
+      <div
+        class="col-md-3 col-sm-6"
+        *ngFor="let product of products.slice(0, 4)"
+      >
+        <div class="product-grid">
+          <div class="product-image">
+            <a class="image">
+              <img
+                [src]="url + 'getProductPhoto/' + product.pid"
+                alt="Product Image"
+              />
+              <!-- Bind product image source -->
+            </a>
+          </div>
+          <div class="product-content">
+            <h3 class="title">
+              <a (click)="navigateToProfile(product.pid)">{{
+                product.pname.length > 20
+                  ? product.pname.substring(0, 20) + "..."
+                  : product.pname
+              }}</a>
+            </h3>
+            <!-- Bind product model -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Featured Product End -->
+
+<div class="parallax">
+  <div class="mt-1">
+    <div class="container">
+      <!-- <h2>About Us</h2> -->
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <div class="text-white">
+            <h1 class="fw-bold fs-1 py-5">Visit Us</h1>
+            <p>
+              Step into our home decor shop and immerse yourself in a world of
+              style and sophistication. From elegant furnishings to chic
+              accessories, our curated selection offers something for every
+              taste and budget. Whether you're looking to refresh a room or
+              completely transform your space, our knowledgeable staff is here
+              to help you find the perfect pieces to bring your vision to life.
+              Visit us today and let us inspire you to create the home of your
+              dreams.
+            </p>
+            <button class="btn btn-outline-info px-4" type="button">
+              Visit Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="container">
+  <div class="row my-5 justify-content-center text-center">
+    <h1 class="text-primary fs-2 fw-bold">Recent Product</h1>
+    <p class="py-3 fw-bold">
+      Introducing our featured product: lifelike artificial plants and grass,
+      perfect for adding a touch of greenery to any space, indoors or outdoors.
+    </p>
+    <ngb-carousel
+      *ngIf="products.length > 0"
+      [showNavigationArrows]="true"
+      [interval]="5000"
+      [pauseOnHover]="true"
+    >
+      <ng-template ngbSlide *ngFor="let product of products">
+        <div class="text-center">
+          <img
+            [src]="product.Pimages"
+            class="d-block mx-auto"
+            style="max-height: 350px; max-width: 40%"
+            alt="{{ product.Pbrand }}"
+          />
+          <div class="carousel-caption">
+            <h3>{{ product.Pbrand }}</h3>
+          </div>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+</div> -->
+
+<div class="mt-1 mb-5 py-5" style="background-color: #b4b3b3">
+  <div class="container">
+    <div class="row">
+      <div class="d-flex justify-content-between">
+        <h1 class="fs-2 fw-bold" style="color: #b51069">Recent Product</h1>
+        <button
+          class="btn btn-dark"
+          style="background-color: #462b5e"
+          routerLink="all_products"
+        >
+          View All Product
+        </button>
+      </div>
+
+      <p class="py-3 fw-bold">
+        Introducing our featured product: lifelike artificial plants and grass,
+        perfect for adding a touch of greenery to any space, indoors or
+        outdoors.
+      </p>
+      <div class="col-xs-12 col-md-6 mb-5">
+        <!-- product -->
+        <div
+          routerLink="all_products"
+          class="product-content product-wrap clearfix"
+          *ngFor="let product of products.slice(0, 2)"
+        >
+          <div class="row">
+            <div class="col-md-5 col-sm-12 col-xs-12">
+              <div class="product-image">
+                <img
+                  [src]="url + 'getProductPhoto/' + product.pid"
+                  alt="Product Image"
+                  class="img-responsive"
+                  style="height: 300px; width: 300px"
+                />
+                <span class="tag2 hot">HOT</span>
+              </div>
+            </div>
+            <div class="col-md-7 col-sm-12 col-xs-12">
+              <div class="product-deatil">
+                <h5 class="name fw-bold">
+                  <a href="#">
+                    {{
+                      product.pname.length > 20
+                        ? product.pname.substring(0, 20) + "..."
+                        : product.pname
+                    }}
+                  </a>
+                </h5>
+                <p class="price-container">
+                  <span>{{
+                    product.pdescription.length > 100
+                      ? product.pdescription.substring(0, 100) + "..."
+                      : product.pdescription
+                  }}</span>
+                </p>
+                <!-- <span class="tag1"></span> -->
+                <!-- </div>
+              <div class="description">
+                <p>Proin in ullamcorper lorem. Maecenas eu ipsum</p>
+              </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-6 mt-4">
+        <div
+          class="product-content product-wrap clearfix"
+          routerLink="all_products"
+          *ngFor="let product of products.slice(2, 4)"
+        >
+          <div class="row">
+            <div class="col-md-5 col-sm-12 col-xs-12">
+              <div class="product-image">
+                <img
+                  [src]="url + 'getProductPhoto/' + product.pid"
+                  alt="Product Image"
+                  class="img-responsive"
+                  style="height: 300px"
+                />
+                <span class="tag2 hot">HOT</span>
+              </div>
+            </div>
+            <div class="col-md-7 col-sm-12 col-xs-12">
+              <div class="product-deatil">
+                <h5 class="name fw-bold">
+                  <a href="#">
+                    {{
+                      product.pname.length > 20
+                        ? product.pname.substring(0, 20) + "..."
+                        : product.pname
+                    }}
+                  </a>
+                </h5>
+                <p class="price-container">
+                  <span>{{
+                    product.pdescription.length > 200
+                      ? product.pdescription.substring(0, 200) + "..."
+                      : product.pdescription
+                  }}</span>
+                </p>
+                <!-- <span class="tag1"></span> -->
+              </div>
+              <!-- <div class="description">
+                <p>Proin in ullamcorper lorem. Maecenas eu ipsum</p>
+              </div> -->
+            </div>
+          </div>
+        </div>
+        <!-- end product -->
+      </div>
+    </div>
+  </div>
+</div>

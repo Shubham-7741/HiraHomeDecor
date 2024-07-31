@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Find_My_Artist';
+  title = 'Hira Home Decor';
+  isLoggedIn() {
+    return !localStorage.getItem('admin');
+  }
+
+
+  onActive() {
+    window.scroll(0, 0);
+  }
 }

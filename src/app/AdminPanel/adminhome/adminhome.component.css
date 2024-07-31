@@ -1,0 +1,30 @@
+mat-sidenav {
+    position: fixed;
+    background-color: #0f1720;
+    width: 230px;
+    height: 100%;
+}
+
+.main {
+    margin-left: 30px;
+    min-height: 76vh;
+}
+
+mat-toolbar {
+    justify-content: space-between;
+}
+
+.box {
+    margin-top: 15px;
+}
+
+mat-icon {
+    margin-left: 15px;
+    color: gray;
+}
+
+@media screen and (max-width: 768px) {
+    .toolbar {
+        text-align: center;
+    }
+}

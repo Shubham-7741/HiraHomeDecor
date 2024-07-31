@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { AuthService } from 'src/app/Service/auth.service';
+import { SharedService } from 'src/app/Service/shared.service';
 
 @Component({
   selector: 'app-header-bottom',
@@ -7,5 +10,15 @@ import { Component } from '@angular/core';
 })
 export class HeaderBottomComponent {
   isNavbarCollapsed = true;
+
+
+  constructor(private authService: AuthService) { }
+
+  ngOnInit(): void {
+  }
+
+  onLogout() {
+    this.authService.logout();
+  }
 
 }
